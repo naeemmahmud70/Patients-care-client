@@ -30,6 +30,9 @@ const Navbar = () => {
                     <li className="nav-item active fw-bold">
                         <a className="nav-link mr-5" href="#contact">Contact Us</a>
                     </li>
+                    <li className="nav-item active fw-bold">
+                    <Link to="/dashboard" className="nav-link mr-5">Dashboard</Link>
+                    </li>
                 </ul>
             </div>
         </nav>

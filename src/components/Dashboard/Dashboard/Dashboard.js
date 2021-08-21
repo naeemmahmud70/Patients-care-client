@@ -11,23 +11,23 @@ const Dashboard = () => {
 
     const handleDateChange = date => {
         setSelectedDate(date);
+
+    }
+
+    useEffect(() => {
         fetch('http://localhost:5000/appointmentsByDate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ date })
+            body: JSON.stringify({ date: selectedDate })
         })
             .then(res => res.json())
             .then(data => {
                 setAppointments(data)
             })
-    }
-
-    // useEffect(() => {
-
-    // }, [selectedDate])
+    }, [selectedDate])
 
     return (
-        <div>
+        <div style={{ backgroundColor: "#F4FDFB" }}>
             <div className="container-fluid row">
                 <div className="col-md-2">
                     <Sidebar></Sidebar>
