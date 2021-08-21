@@ -9,8 +9,9 @@ import Home from './components/Home/Home/Home';
 import Appointment from './components/Appointment/Appintment/Appointment';
 import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
-export const UserContext = createContext();
+export const UserContext = createContext({});
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -21,12 +22,18 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
           <PrivateRoute path="/appointment">
             <Appointment></Appointment>
           </PrivateRoute>
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>

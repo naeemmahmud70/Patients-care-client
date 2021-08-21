@@ -6,7 +6,7 @@ import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brand
 import FooterCol from './FooterCol/FooterCol';
 
 const Footer = () => {
-    const noNamed = [
+    const AboutUs = [
         { name: "Emergency Dental Care", link: "/emergency" },
         { name: "Check Up", link: "/checkup" },
         { name: "Treatment of Personal Diseases", link: "/personal-treatment" },
@@ -37,10 +37,10 @@ const Footer = () => {
         { name: "Check Up", link: "/checkup" }
     ]
     return (
-        <footer className="footer-area clear-both">
+        <footer id="aboutUs" className="footer-area clear-both">
             <div className="container pt-5">
                 <div className="row py-5">
-                    <FooterCol key={1} menuTitle={"."} menuItems={noNamed} />
+                    <FooterCol key={1} menuTitle={"About Us"} menuItems={AboutUs} />
                     <FooterCol key={2} menuTitle="Services" menuItems={services} />
                     <FooterCol key={3} menuTitle="Oral Health" menuItems={oralHealth} />
                     <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}>

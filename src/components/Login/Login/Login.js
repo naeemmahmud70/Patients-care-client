@@ -43,8 +43,8 @@ const Login = () => {
     }
     return (
         <div className="row  shadow m-2 p-5">
-            <h4 className="fw-bold">Login Here</h4>
-            <div className="col-md-6 bg-light">
+            <div className="col-md-5 bg-light p-5">
+            <h4 className="fw-bold text-center">Login Here</h4>
                 <div className="form-group">
                     <label htmlFor="">User Name</label>
                     <input type="text" className="form-control" />
@@ -56,11 +56,11 @@ const Login = () => {
                 <div className="form-group">
                     <label htmlFor="" className="text-danger">Forgot your password?</label>
                 </div>
-                <div className="from-group mt-5">
-                    <button onClick={handleGoogleSignIn} className="btn-style" >Google Sign in</button>
+                <div className="from-group mt-5 text-center">
+                    <button onClick={handleGoogleSignIn} className="btn-brand" >Google Sign in</button>
                 </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-7">
                 <img className="img-fluid" src={loginImg} alt="" />
             </div>
         </div>

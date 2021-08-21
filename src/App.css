@@ -6,4 +6,6 @@
   border-color: transparent;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 7px 15px;
+  border-radius: 5px;
 }

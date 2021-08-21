@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../App';
+import { toast } from 'react-toastify';
+import swal from 'sweetalert';
+
 
 const customStyles = {
     content: {
@@ -15,12 +19,39 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
-    
-    const { register, handleSubmit, errors } = useForm();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
-    }
+        const appointmentDetails = {
+            appointment: data,
+            appointmentStatus: '',
+            appointmentDate: date,
+            ...loggedInUser
+        }
+
+        console.log(appointmentDetails)
+        const url = `http://localhost:5000/addAppointment`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(appointmentDetails)
+        })
+            .then(res => {
+                console.log(res)
+                if (res) {
+                    swal("Appointment Done!", "Your appointment submitted successfully!", "success")
+                }
+                reset();
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
+    };
+
     return (
         <div>
             <Modal
@@ -35,7 +66,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-group">
-                        <input type="text" ref={register} name="name" placeholder="Your Name" className="form-control" />
+                        <input type="text" ref={register} defaultValue={loggedInUser.name} name="name" placeholder="Your Name" className="form-control" />
                         {errors.name && <span className="text-danger">This field is required</span>}
 
                     </div>
@@ -44,7 +75,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                         {errors.phone && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group">
-                        <input type="text" ref={register} name="email" placeholder="Email" className="form-control" />
+                        <input type="text" ref={register} defaultValue={loggedInUser.email} name="email" placeholder="Email" className="form-control" />
                         {errors.email && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group row">
