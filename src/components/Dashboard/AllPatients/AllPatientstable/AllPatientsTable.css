@@ -1,0 +1,11 @@
+.drop-down-btn{
+    border: 3px solid #1cc7c1;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+.selection-option{
+    margin: 5px;
+    border: 2px solid gray;
+    width: 100px;
+    border-radius: 5px;
+}

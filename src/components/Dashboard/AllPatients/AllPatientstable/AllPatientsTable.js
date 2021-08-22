@@ -1,7 +1,8 @@
 import React from 'react';
+import './AllPatientsTable.css'
 
-const AllPatientsTable = ({ appointments }) => {
-
+const AllPatientsTable = ({ appointments, handleUpdate, handleDelete }) => {
+    console.log(appointments)
     return (
         <table className="table table-borderless ">
             <thead>
@@ -12,7 +13,7 @@ const AllPatientsTable = ({ appointments }) => {
                     <th className="text-secondary" scope="col">Age</th>
                     <th className="text-secondary" scope="col">Weight</th>
                     <th className="text-secondary" scope="col">Phone</th>
-                    <th className="text-secondary" scope="col">Email</th>
+                    <th className="text-secondary" scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +27,18 @@ const AllPatientsTable = ({ appointments }) => {
                             <td>{appointment.appointment.age}</td>
                             <td>{appointment.appointment.weight}KG</td>
                             <td>{appointment.appointment.phone}</td>
-                            <td>{appointment.appointment.email}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="drop-down-btn dropdown-toggle fw-bold" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {appointment.appointmentStatus}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li><button onClick={() => handleUpdate(appointment._id, 'Pending')} class="dropdown-item selection-option" type="button">Pending</button></li>
+                                        <li><button onClick={() => handleUpdate(appointment._id, 'Viewed')} class="dropdown-item selection-option" type="button">Viewed</button></li>
+                                        <li><button onClick={() => handleDelete(appointment._id)} class="dropdown-item selection-option" type="button">Cancel</button></li>
+                                    </ul>
+                                </div>
+                            </td>
                         </tr>
                     )
                 }
