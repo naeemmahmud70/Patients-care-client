@@ -24,10 +24,12 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = data => {
+        const todaysDate = new Date()
         const appointmentDetails = {
             appointment: data,
             appointmentStatus: '',
             appointmentDate: date,
+            todaysDate: todaysDate.toDateString(),
             ...loggedInUser
         }
 

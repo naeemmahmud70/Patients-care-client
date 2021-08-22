@@ -4,6 +4,7 @@ import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import AllPatientsTable from './AllPatientstable/AllPatientsTable';
 import { toast } from 'react-toastify';
 import swal from 'sweetalert';
+import AppointmentSummary from '../AppointmentSummary/AppointmentSummary';
 
 const AllPatients = () => {
     const [appointments, setAppointments] = useState([]);
@@ -51,6 +52,7 @@ const AllPatients = () => {
             </div>
             <div className="col-md-10" >
                 <div className="p-5">
+                    <AppointmentSummary IsStatusUpdate={IsStatusUpdate}></AppointmentSummary>
                     <h5 className="text-brand">All Patients</h5>
                     <AllPatientsTable appointments={appointments} key={appointments._id} handleUpdate={handleUpdate} handleDelete={handleDelete}></AllPatientsTable>
                 </div>

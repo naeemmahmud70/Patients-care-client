@@ -11,6 +11,7 @@ const Dashboard = () => {
 
     const handleDateChange = date => {
         setSelectedDate(date);
+        console.log(date)
 
     }
 
