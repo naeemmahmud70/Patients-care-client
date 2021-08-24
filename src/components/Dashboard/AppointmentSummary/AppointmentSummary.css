@@ -1,0 +1,17 @@
+.summary-div-style{
+    width: 330px;
+    height: 80px;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 24px;
+    background: linear-gradient(75deg, #19D3AE,#0fcfec);
+}
+
+.prescription-bg{
+    background-image: linear-gradient(75deg, #19D3AE,#0fcfec);
+}
+.profile-bg{
+    background-image: linear-gradient(75deg, #19D3AE,#0fcfec);
+}
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import AppointmentShortlist from '../../AppointmentShortList/AppointmentShortlist';
+import GivePrescription from '../GivePrescription/GivePrescription';
 
 const AppointmentByDate = ({ appointments }) => {
     return (
@@ -7,7 +7,7 @@ const AppointmentByDate = ({ appointments }) => {
             <h2 className="text-brand text-center">Appointments</h2>
             {
                 appointments.length ?
-                    <AppointmentShortlist appointments={appointments} key={appointments._id} ></AppointmentShortlist>
+                    <GivePrescription appointments={appointments} key={appointments._id} ></GivePrescription>
                     :
                     <div className="p-5">
                         <h4 className="lead text-center">No Appointments for this Date</h4>

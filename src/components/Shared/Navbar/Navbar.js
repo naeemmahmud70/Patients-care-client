@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 const Navbar = () => {
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light nav-bg fixed-top t-0">
             <h2 className="fw-bold">Patients Care</h2>
@@ -31,7 +32,7 @@ const Navbar = () => {
                         <a className="nav-link mr-5" href="#contact">Contact Us</a>
                     </li>
                     <li className="nav-item active fw-bold">
-                    <Link to="/dashboard" className="nav-link mr-5">Dashboard</Link>
+                        <Link to="/dashboard" className="nav-link mr-5">Dashboard</Link>
                     </li>
                 </ul>
             </div>

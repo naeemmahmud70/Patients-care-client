@@ -19,16 +19,18 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = data => {
         const todaysDate = new Date()
         const appointmentDetails = {
             appointment: data,
-            appointmentStatus: '',
+            appointmentStatus: 'Pending',
             appointmentDate: date,
+            appointmentOn: appointmentOn,
+            prescription: '',
             todaysDate: todaysDate.toDateString(),
             ...loggedInUser
         }
@@ -47,6 +49,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
                 if (res) {
                     swal("Appointment Done!", "Your appointment submitted successfully!", "success")
                 }
+                closeModal()
                 reset();
             })
             .catch((error) => {

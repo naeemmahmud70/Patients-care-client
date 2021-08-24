@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
-const AppointmentSummary = ({ IsStatusUpdate }) => {
+import './AppointmentSummary.css'
+const AppointmentSummary = ({ IsStatusUpdate, isDeleted }) => {
     const [todaysDate, setTodaysDate] = useState(new Date());
     const [todaysAppointment, setTodaysAppointment] = useState([])
     const [pendingAppointment, setPendingAppointment] = useState([]);
@@ -28,19 +28,25 @@ const AppointmentSummary = ({ IsStatusUpdate }) => {
             .then(data => {
                 setPendingAppointment(data)
             })
-    }, [IsStatusUpdate])
+    }, [IsStatusUpdate, isDeleted])
 
     useEffect(() => {
         fetch('http://localhost:5000/appointments')
             .then(res => res.json())
             .then(data => setTotalAppointment(data))
-    }, []);
+    }, [isDeleted]);
 
     return (
-        <div>
-            <h1>this is todays appointment: {todaysAppointment.length}</h1>
-            <h1>this is pending Appointment: {pendingAppointment.length}</h1>
-            <h1>this is total appointment: {totalAppointment.length}</h1>
+        <div className="d-flex justify-content-center mb-4">
+            <div className="summary-div-style">
+                <h4>Pending Appointments: {pendingAppointment.length}</h4>
+            </div>
+            <div className="summary-div-style">
+                <h4>Todays Appointment: {todaysAppointment.length}</h4>
+            </div>
+            <div className="summary-div-style">
+                <h4>Total Appointment: {totalAppointment.length}</h4>
+            </div>
         </div>
     );
 };

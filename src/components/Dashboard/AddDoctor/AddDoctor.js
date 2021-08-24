@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from '../Dashboard/Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import { useForm } from 'react-hook-form';
 import './AddDoctor.css'
 import axios from 'axios';
@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
+
+
 
 
 const AddDoctor = () => {
@@ -60,7 +62,7 @@ const AddDoctor = () => {
     };
 
     return (
-        <div style={{ backgroundColor: "#F4FDFB" }} className="row">
+        <div style={{ backgroundColor: "#F4FDFB", height:"100vh" }} className="row">
             <div className="col-md-2">
                 <Sidebar></Sidebar>
             </div>
