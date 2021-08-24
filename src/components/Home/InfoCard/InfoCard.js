@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './InfoCard.css';
 
-
 const InfoCard = ({ info }) => {
     return (
         <div className="col-md-4 text-white info-card">

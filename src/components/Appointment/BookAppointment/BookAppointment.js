@@ -46,7 +46,7 @@ const BookAppointment = ({ date }) => {
             visitingHour: '8:00 AM - 9:00 AM',
             totalSpace: 10
         }
-    ]
+    ];
 
     return (
         <section>

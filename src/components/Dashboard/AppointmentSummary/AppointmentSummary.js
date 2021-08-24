@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './AppointmentSummary.css'
+
 const AppointmentSummary = ({ IsStatusUpdate, isDeleted }) => {
+
     const [todaysDate, setTodaysDate] = useState(new Date());
     const [todaysAppointment, setTodaysAppointment] = useState([])
     const [pendingAppointment, setPendingAppointment] = useState([]);

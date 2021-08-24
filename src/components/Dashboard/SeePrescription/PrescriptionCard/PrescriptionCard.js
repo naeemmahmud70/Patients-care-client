@@ -3,7 +3,7 @@ import icon from '../../../../images/dentistry.png'
 import './PrescriptionCard.css'
 
 const PrescriptionCard = ({ prescription }) => {
-    console.log(prescription);
+
     return (
         <section className=" bg-light container-fluid prescription-card">
             <div className="w-100">

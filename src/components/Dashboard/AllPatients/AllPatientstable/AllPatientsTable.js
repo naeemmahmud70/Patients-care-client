@@ -2,7 +2,7 @@ import React from 'react';
 import './AllPatientsTable.css'
 
 const AllPatientsTable = ({ appointments, handleUpdate, handleDelete }) => {
-    console.log(appointments)
+
     return (
         <table className="table table-borderless ">
             <thead>

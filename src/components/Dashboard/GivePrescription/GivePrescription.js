@@ -9,15 +9,13 @@ const GivePrescription = ({ appointments }) => {
 
     function openModal() {
         setIsOpen(true);
-    }
-
+    };
 
     function closeModal() {
         setIsOpen(false);
-    }
+    };
 
     const handleGetPatient = appointment => {
-
         const patientDetails = {
             name: appointment.name,
             email: appointment.email,
@@ -27,13 +25,13 @@ const GivePrescription = ({ appointments }) => {
             todaysDate: appointment.todaysDate,
             appointmentOn: appointment.appointmentOn,
             id: appointment._id
-        }
+        };
         setPatient(patientDetails)
-    }
+    };
 
     const handleGetId = id => {
         setPatientId(id)
-    }
+    };
 
     return (
         <table className="table table-borderless">

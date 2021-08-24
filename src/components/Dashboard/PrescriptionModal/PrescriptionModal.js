@@ -17,18 +17,17 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 const PrescriptionModal = ({ modalIsOpen, closeModal, patient, id }) => {
-    console.log(id)
+
     const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data, id)
+
         axios.patch(`http://localhost:5000/prescription/${id}`, { prescription: data.prescription })
             .then(res => {
                 // res.data.modifiedCount && setStatusUpdate(false)
                 swal("Prescription Given!", "Prescription will see in the dashboard!", "success")
                 reset();
                 closeModal();
-                console.log("responding", res)
             });
     };
 

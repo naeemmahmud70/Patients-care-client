@@ -7,12 +7,11 @@ const BookAppointmentCard = ({ booking, date }) => {
 
     function openModal() {
         setIsOpen(true);
-    }
-
+    };
 
     function closeModal() {
         setIsOpen(false);
-    }
+    };
 
     return (
         <div className="col-md-4 mb-5">

@@ -8,7 +8,7 @@ import PrescriptionCard from './PrescriptionCard/PrescriptionCard';
 const SeePrescription = () => {
     const [prescriptions, setPrescription] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    // ?email=' + loggedInUser.email
+
     useEffect(() => {
         fetch('http://localhost:5000/yourPrescription?email=' + loggedInUser.email)
             .then(res => res.json())

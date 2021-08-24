@@ -33,9 +33,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             prescription: '',
             todaysDate: todaysDate.toDateString(),
             ...loggedInUser
-        }
+        };
 
-        console.log(appointmentDetails)
         const url = `http://localhost:5000/addAppointment`;
         fetch(url, {
             method: 'POST',

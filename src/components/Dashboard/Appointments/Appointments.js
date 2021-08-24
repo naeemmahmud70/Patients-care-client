@@ -8,13 +8,10 @@ import AppointmentByDate from '../AppointmentByDate/AppointmentByDate';
 const Appointments = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
-    console.log(appointments)
 
     const handleDateChange = date => {
         setSelectedDate(date);
-        console.log(date)
-
-    }
+    };
 
     useEffect(() => {
         fetch('http://localhost:5000/appointmentsByDate', {

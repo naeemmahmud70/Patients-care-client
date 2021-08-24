@@ -12,18 +12,17 @@ const AllPatients = () => {
     const [appointments, setAppointments] = useState([]);
     const [IsStatusUpdate, setStatusUpdate] = useState(false);
     const [isDeleted, setDeleted] = useState(false);
-    console.log(appointments)
 
     useEffect(() => {
         fetch('http://localhost:5000/appointments')
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [IsStatusUpdate, isDeleted]);
-    // IsStatusUpdate, isDeleted
+
 
     const handleUpdate = (id, appointmentStatus) => {
         setStatusUpdate(true)
-        console.log(id, appointmentStatus)
+
         axios.patch(`http://localhost:5000/updateStatus/${id}`, { status: appointmentStatus })
             .then(res => {
                 res.data.modifiedCount && setStatusUpdate(false)

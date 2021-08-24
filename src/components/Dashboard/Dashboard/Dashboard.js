@@ -11,11 +11,8 @@ import defaultUser from '../../../images/default-user.png'
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
 
-
 const Dashboard = () => {
-
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    console.log(loggedInUser)
 
     const isSignOut = () => {
         const token = sessionStorage.removeItem('token');
@@ -53,7 +50,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div style={{ backgroundColor: "#F4FDFB", height:"100vh" }} className="row">
+        <div style={{ backgroundColor: "#F4FDFB", height: "100vh" }} className="row">
             <div className="col-md-2">
                 <Sidebar></Sidebar>
             </div>

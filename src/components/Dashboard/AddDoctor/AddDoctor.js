@@ -39,7 +39,6 @@ const AddDoctor = () => {
             email: data.email,
             imageURL: imageURL
         }
-        console.log(adminData)
 
         const url = `http://localhost:5000/addDoctor`
         fetch(url, {
@@ -62,7 +61,7 @@ const AddDoctor = () => {
     };
 
     return (
-        <div style={{ backgroundColor: "#F4FDFB", height:"100vh" }} className="row">
+        <div style={{ backgroundColor: "#F4FDFB", height: "100vh" }} className="row">
             <div className="col-md-2">
                 <Sidebar></Sidebar>
             </div>
