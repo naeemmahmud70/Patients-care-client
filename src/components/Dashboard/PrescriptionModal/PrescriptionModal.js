@@ -22,7 +22,7 @@ const PrescriptionModal = ({ modalIsOpen, closeModal, patient, id }) => {
 
     const onSubmit = (data) => {
 
-        axios.patch(`http://localhost:5000/prescription/${id}`, { prescription: data.prescription })
+        axios.patch(`https://limitless-crag-84661.herokuapp.com/prescription/${id}`, { prescription: data.prescription })
             .then(res => {
                 // res.data.modifiedCount && setStatusUpdate(false)
                 swal("Prescription Given!", "Prescription will see in the dashboard!", "success")

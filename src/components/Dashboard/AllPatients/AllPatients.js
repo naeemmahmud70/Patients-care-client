@@ -14,7 +14,7 @@ const AllPatients = () => {
     const [isDeleted, setDeleted] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch('https://limitless-crag-84661.herokuapp.com/appointments')
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [IsStatusUpdate, isDeleted]);
@@ -23,7 +23,7 @@ const AllPatients = () => {
     const handleUpdate = (id, appointmentStatus) => {
         setStatusUpdate(true)
 
-        axios.patch(`http://localhost:5000/updateStatus/${id}`, { status: appointmentStatus })
+        axios.patch(`https://limitless-crag-84661.herokuapp.com/updateStatus/${id}`, { status: appointmentStatus })
             .then(res => {
                 res.data.modifiedCount && setStatusUpdate(false)
             })
@@ -35,7 +35,7 @@ const AllPatients = () => {
     const handleDelete = id => {
         setDeleted(true)
         console.log(id)
-        fetch(`http://localhost:5000/deleteAppointment/${id}`, {
+        fetch(`https://limitless-crag-84661.herokuapp.com/deleteAppointment/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

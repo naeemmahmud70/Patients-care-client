@@ -9,7 +9,7 @@ const AppointmentSummary = ({ IsStatusUpdate, isDeleted }) => {
     const [totalAppointment, setTotalAppointment] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/todaysAppointment', {
+        fetch('https://limitless-crag-84661.herokuapp.com/todaysAppointment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ date: todaysDate.toDateString() })
@@ -21,7 +21,7 @@ const AppointmentSummary = ({ IsStatusUpdate, isDeleted }) => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/pendingAppointment', {
+        fetch('https://limitless-crag-84661.herokuapp.com/pendingAppointment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: "Pending" })
@@ -33,7 +33,7 @@ const AppointmentSummary = ({ IsStatusUpdate, isDeleted }) => {
     }, [IsStatusUpdate, isDeleted])
 
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch('https://limitless-crag-84661.herokuapp.com/appointments')
             .then(res => res.json())
             .then(data => setTotalAppointment(data))
     }, [isDeleted]);

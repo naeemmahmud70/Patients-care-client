@@ -35,7 +35,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             ...loggedInUser
         };
 
-        const url = `http://localhost:5000/addAppointment`;
+        const url = `https://limitless-crag-84661.herokuapp.com/addAppointment`;
         fetch(url, {
             method: 'POST',
             headers: {

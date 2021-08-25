@@ -10,7 +10,7 @@ const SeePrescription = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/yourPrescription?email=' + loggedInUser.email)
+        fetch('https://limitless-crag-84661.herokuapp.com/yourPrescription?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setPrescription(data))
     }, [loggedInUser]);

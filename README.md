@@ -19,5 +19,5 @@
 - Express JS
 - MongoDB
 
-###  `Website Link :` [Live Site](https://royal-furniture-6905b.firebaseapp.com/)
-###  `Server Repo Link :` [Github](https://github.com/naeemmahmud70/Royal-furniture-server)
+###  `Website Link :` [Live Site](https://patients-care-ec054.web.app/)
+###  `Server Repo Link :` [Github](https://github.com/naeemmahmud70/patients-care-server)

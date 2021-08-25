@@ -14,7 +14,7 @@ const Appointments = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/appointmentsByDate', {
+        fetch('https://limitless-crag-84661.herokuapp.com/appointmentsByDate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ date: selectedDate })

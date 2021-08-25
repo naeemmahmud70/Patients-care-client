@@ -40,7 +40,7 @@ const AddDoctor = () => {
             imageURL: imageURL
         }
 
-        const url = `http://localhost:5000/addDoctor`
+        const url = `https://limitless-crag-84661.herokuapp.com/addDoctor`
         fetch(url, {
             method: 'POST',
             headers: {
