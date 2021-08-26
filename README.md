@@ -7,6 +7,7 @@
 - Doctor can give prescription, change status of the appointment.
 - Doctor can add another doctor and can see the pending, todays and total appointment in the dashboard.
 - Firebase Authentication & hosting are also included. 
+- use default admin access with email default77@admin.com and #dev2021.
 
 # Technology
 - HTML5

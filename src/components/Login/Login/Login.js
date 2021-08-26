@@ -148,7 +148,7 @@ const Login = () => {
     return (
         <div className="row  shadow m-2 p-5">
             <div className="col-md-5 bg-light p-5">
-                <div className="text-center"> 
+                <div className="text-center">
                     <h2 className="fw-bold">Create An Account</h2>
                     <hr className="mb-5" />
                     <form onSubmit={handleSubmit} >
@@ -160,12 +160,17 @@ const Login = () => {
                         </div>
                         <div className="form-group">
                             <input className="form-control" type="password" name="password" onBlur={handleBlur} placeholder="enter your password" required />
+                            <small className="text-secondary">default admin access with default77@admin.com and #dev2021.</small>
                         </div>
                         <input className="btn-brand fw-bold" type="submit" value={newUser ? "Sign Up" : "Sign In"} />
                     </form>
                     <input type="checkbox" onChange={() => setNewUser(!newUser)} name="" id="" />
                     <label htmlFor="newUser">Create new user</label>
-                    <hr/>
+                    <div>
+                        <p>{user.error}</p>
+                        {user.success && <p>User {newUser ? 'created' : 'Logged In'} successfully</p>}
+                    </div>
+                    <hr />
                 </div>
                 <div className="from-group mt-5 text-center">
                     <button onClick={handleGoogleSignIn} className="btn-brand" >Google Sign in</button>
@@ -173,10 +178,6 @@ const Login = () => {
             </div>
             <div className="col-md-7">
                 <img className="img-fluid" src={loginImg} alt="" />
-            </div>
-            <div>
-                <p>{user.error}</p>
-                {user.success && <p>User {newUser ? 'created' : 'Logged In'} successfully</p>}
             </div>
         </div>
     );
