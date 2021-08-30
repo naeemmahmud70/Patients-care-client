@@ -19,8 +19,7 @@
 - Node JS
 - Express JS
 - MongoDB
-https://youtu.be/_f6vysAKOAw
 
-###  `Website Demo Video :` [YouTube](https://patients-care-ec054.web.app/)
+###  `Demo Video :` [YouTube](https://youtu.be/8FnBQRYdlwA)
 ###  `Website Link :` [Live Site](https://patients-care-ec054.web.app/)
 ###  `Server Repo Link :` [Github](https://github.com/naeemmahmud70/patients-care-server)
